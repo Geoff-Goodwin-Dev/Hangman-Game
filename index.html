@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman Game</title>
+  </head>
+
+  <body>
+
+<!--===========================Page Display Section===============================-->
+
+    <!--<div id="game">-->
+      <!--<p>You chose: <span id="userChoice"></span></p>-->
+      <!--<p>Computer chose: <span id="computerChoice"></span></p>-->
+      <!--<p>Wins: <span id="winCount">0</span></p>-->
+      <!--<p>Losses: <span id="lossCount">0</span></p>-->
+      <!--<p>Ties: <span id="tieCount">0</span></p>-->
+      <!---->
+    <!--</div>-->
+
+<!--===========================Script Section - Variables Declaration===============================-->
+
+  <!--<script type="text/javascript">-->
+    <!--var choices = ["r", "p", "s"];-->
+    <!--var wins = 0;-->
+    <!--var losses = 0;-->
+    <!--var ties = 0;-->
+
+
+    <!--//======================================Functional Scripts Section==========================================-->
+
+    <!--document.onkeyup = function(pressed) {-->
+      <!--var userGuess = pressed.key;-->
+
+      <!--if (choices.includes(userGuess) === true) {-->
+        <!--var computerGuess = choices[Math.floor(Math.random() * choices.length)];-->
+        <!--document.getElementById('userChoice').innerHTML = userGuess;-->
+        <!--document.getElementById('computerChoice').innerHTML = computerGuess;-->
+
+        <!--var result = (userGuess + computerGuess);-->
+
+        <!--switch (result) {-->
+
+          <!--// TIE CONDITIONS-->
+          <!--case "rr":-->
+          <!--case "pp":-->
+          <!--case "ss":-->
+            <!--ties ++;-->
+            <!--document.getElementById('tieCount').innerHTML = ties;-->
+            <!--break;-->
+
+          <!--// LOSS CONDITIONS-->
+          <!--case "rp":-->
+          <!--case "ps":-->
+          <!--case "sr":-->
+            <!--losses ++;-->
+            <!--document.getElementById('lossCount').innerHTML = losses;-->
+            <!--break;-->
+
+          <!--// WIN CONDITIONS-->
+          <!--case "pr":-->
+          <!--case "sp":-->
+          <!--case "rs":-->
+            <!--wins ++;-->
+            <!--document.getElementById('winCount').innerHTML = wins;-->
+            <!--break;-->
+
+          <!--default:-->
+            <!--console.log("what happened?!?!?!?!?");-->
+        <!--}-->
+      <!--}-->
+      <!--else {-->
+        <!--alert("only R, P, or S can be selected")-->
+      <!--}-->
+    <!--};-->
+
+  <!--</script>-->
+
+  </body>
+</html>
