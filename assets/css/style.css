@@ -1,0 +1,101 @@
+body {
+  background-color: #2b5d76;
+  font-family: 'Special Elite', cursive;
+  box-sizing: border-box;
+
+}
+
+#start {
+  display: inline;
+}
+
+#mainPageBodyContainer {
+  /*width: 100%;*/
+}
+
+.insetShaddow {
+  border: 3px solid #000000;
+  box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+#gameTitleBar {
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  background-color: #65370d;
+  padding: 2% 0;
+}
+
+#hangmanDisplay {
+  text-align: center;
+  width: 40%;
+  line-height: 0;
+}
+
+#hangmanImg {
+  margin: 0 auto;
+  width: 95%;
+}
+
+#gameBody{
+  text-align: center;
+  padding: 10px 0;
+}
+
+.centeredBodyContent {
+  max-width: 960px;
+  margin: 0 auto 2px auto;
+  background-color: #a48d5b;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+#wordDisplaySection {
+  height: 60px;
+  background-color: #a48d5b;
+}
+
+#wordContainer {
+  text-align: center;
+  line-height: 36px;
+}
+
+/*KEYBOARD STYLING*/
+
+#keyboardContainer {
+  background-color: #65370d;
+  max-width: 550px;
+}
+
+.keyboardRow {
+  overflow: hidden;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.keyboardButton {
+  font-weight: bold;
+  font-size: 22px;
+  color: #4f3b1e;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5);
+  padding: 3% 0;
+  margin: 0 0.25%;
+  width: 9.5%;
+  text-align: center;
+  background-image: url('../images/typewriterbutton.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+/*FOOTER WORKING SECTION*/
+
+#workingSection {
+  background-color: #a48d5b;
+  text-align: center;
+}
+/*#a48d5b*/

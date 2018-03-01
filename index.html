@@ -1,83 +1,104 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hangman Game</title>
-  </head>
+<head>
+  <!--META TAGS-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <body>
+  <!--FONTS-->
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 
-<!--===========================Page Display Section===============================-->
+  <!--TITLE INFO-->
+  <title>Hangman Game - Westworld Edition!</title>
 
-    <!--<div id="game">-->
-      <!--<p>You chose: <span id="userChoice"></span></p>-->
-      <!--<p>Computer chose: <span id="computerChoice"></span></p>-->
-      <!--<p>Wins: <span id="winCount">0</span></p>-->
-      <!--<p>Losses: <span id="lossCount">0</span></p>-->
-      <!--<p>Ties: <span id="tieCount">0</span></p>-->
-      <!---->
-    <!--</div>-->
+  <!--SCRIPT FILE LINKAGE-->
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 
-<!--===========================Script Section - Variables Declaration===============================-->
+  <!--STYLESHEET LINKAGE-->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-  <!--<script type="text/javascript">-->
-    <!--var choices = ["r", "p", "s"];-->
-    <!--var wins = 0;-->
-    <!--var losses = 0;-->
-    <!--var ties = 0;-->
+</head>
+
+<body>
+
+  <div id="mainPageBodyContainer">
+
+    <div id="gameTitleBar" class="centeredBodyContent insetShaddow">
+      <h1 >Hangman Game</h1>
+    </div>
+
+    <div id="wordDisplaySection" class="centeredBodyContent insetShaddow">
+      <div id="wordContainer">
+        <h1 id="wordDisplay">Press the Start button to begin</h1>
+        <button id="start" onclick=newRound()>Start</button>
+      </div>
+    </div>
+
+    <div id="hangmanDisplay" class="centeredBodyContent insetShaddow">
+      <img src="assets/images/manLayer_8.png" id="hangmanImg">
+    </div>
+
+    <div id="gameBody" class="centeredBodyContent insetShaddow">
+      <p>Wins: <span id="wins"></span></p>
+      <p>Losses: <span id="losses"></span></p>
+      <p>Guesses Left: <span id="guessDownCounter"></span></p>
+
+      <!--<button id="reset" disabled onclick=reset()>Reset</button>-->
+    </div>
 
 
-    <!--//======================================Functional Scripts Section==========================================-->
 
-    <!--document.onkeyup = function(pressed) {-->
-      <!--var userGuess = pressed.key;-->
+    <!--VIRTUAL KEYBOARD FOR RESPONSIVE ON PHONE OR TABLET-->
+    <div id="keyboardContainer" class="centeredBodyContent insetShaddow">
 
-      <!--if (choices.includes(userGuess) === true) {-->
-        <!--var computerGuess = choices[Math.floor(Math.random() * choices.length)];-->
-        <!--document.getElementById('userChoice').innerHTML = userGuess;-->
-        <!--document.getElementById('computerChoice').innerHTML = computerGuess;-->
+      <div id="keyboardTopRow" class="keyboardRow">
+        <div id="keyQ" class="keyboardButton" onclick=letterGuess("Q")>Q</div>
+        <div id="keyW" class="keyboardButton" onclick=letterGuess("W")>W</div>
+        <div id="keyE" class="keyboardButton" onclick=letterGuess("E")>E</div>
+        <div id="keyR" class="keyboardButton" onclick=letterGuess("R")>R</div>
+        <div id="keyT" class="keyboardButton" onclick=letterGuess("T")>T</div>
+        <div id="keyY" class="keyboardButton" onclick=letterGuess("Y")>Y</div>
+        <div id="keyU" class="keyboardButton" onclick=letterGuess("U")>U</div>
+        <div id="keyI" class="keyboardButton" onclick=letterGuess("I")>I</div>
+        <div id="keyO" class="keyboardButton" onclick=letterGuess("O")>O</div>
+        <div id="keyP" class="keyboardButton" onclick=letterGuess("P")>P</div>
+      </div>
 
-        <!--var result = (userGuess + computerGuess);-->
+      <div id="keyboardMiddleRow" class="keyboardRow">
+        <div id="keyA" class="keyboardButton" onclick=letterGuess("A")>A</div>
+        <div id="keyS" class="keyboardButton" onclick=letterGuess("S")>S</div>
+        <div id="keyD" class="keyboardButton" onclick=letterGuess("D")>D</div>
+        <div id="keyF" class="keyboardButton" onclick=letterGuess("F")>F</div>
+        <div id="keyG" class="keyboardButton" onclick=letterGuess("G")>G</div>
+        <div id="keyH" class="keyboardButton" onclick=letterGuess("H")>H</div>
+        <div id="keyJ" class="keyboardButton" onclick=letterGuess("J")>J</div>
+        <div id="keyK" class="keyboardButton" onclick=letterGuess("K")>K</div>
+        <div id="keyL" class="keyboardButton" onclick=letterGuess("L")>L</div>
+      </div>
 
-        <!--switch (result) {-->
+      <div id="keyboardBottomRow" class="keyboardRow">
+        <div id="keyZ" class="keyboardButton" onclick=letterGuess("Z")>Z</div>
+        <div id="keyX" class="keyboardButton" onclick=letterGuess("X")>X</div>
+        <div id="keyC" class="keyboardButton" onclick=letterGuess("C")>C</div>
+        <div id="keyV" class="keyboardButton" onclick=letterGuess("V")>V</div>
+        <div id="keyB" class="keyboardButton" onclick=letterGuess("B")>B</div>
+        <div id="keyN" class="keyboardButton" onclick=letterGuess("N")>N</div>
+        <div id="keyM" class="keyboardButton" onclick=letterGuess("M")>M</div>
+      </div>
 
-          <!--// TIE CONDITIONS-->
-          <!--case "rr":-->
-          <!--case "pp":-->
-          <!--case "ss":-->
-            <!--ties ++;-->
-            <!--document.getElementById('tieCount').innerHTML = ties;-->
-            <!--break;-->
+    </div>
 
-          <!--// LOSS CONDITIONS-->
-          <!--case "rp":-->
-          <!--case "ps":-->
-          <!--case "sr":-->
-            <!--losses ++;-->
-            <!--document.getElementById('lossCount').innerHTML = losses;-->
-            <!--break;-->
+    <div id="workingSection" class="centeredBodyContent insetShaddow">
+      <p><u>Bad Letter Guesses:</u></p>
+      <p id="badLetterGuesses"></p>
+      <p><u>Good Letter Guesses:</u></p>
+      <p id="goodLetterGuesses"></p>
+    </div>
 
-          <!--// WIN CONDITIONS-->
-          <!--case "pr":-->
-          <!--case "sp":-->
-          <!--case "rs":-->
-            <!--wins ++;-->
-            <!--document.getElementById('winCount').innerHTML = wins;-->
-            <!--break;-->
+  </div>
 
-          <!--default:-->
-            <!--console.log("what happened?!?!?!?!?");-->
-        <!--}-->
-      <!--}-->
-      <!--else {-->
-        <!--alert("only R, P, or S can be selected")-->
-      <!--}-->
-    <!--};-->
-
-  <!--</script>-->
-
-  </body>
+</body>
 </html>
