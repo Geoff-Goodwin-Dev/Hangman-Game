@@ -81,6 +81,7 @@ Not Applicable: This is a static website for educational purposes and therefore 
 * version 1.2 - Changes to HTML layout and addition of progress bar.  Additional items for game mechanics fixes
 * version 1.3 - Additional tweaks to page layout to fix responsive scaling issues 
 * version 1.4 - more tweaks to page layout to fix responsive
+* version 1.5 - bug fix on clearing good/bad guess arrays display
 
 ## Authors
 

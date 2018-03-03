@@ -27,6 +27,8 @@ function newRound() {
   underscoredWord = [];
   guessDownCounter = 8;
   updateImage();
+  document.getElementById('badLetterGuesses').innerText = badGuessArray.join(', ');
+  document.getElementById('goodLetterGuesses').innerText = goodGuessArray.join(', ');
   gradientColor = "linear-gradient(#40b529, #367a29)";
   document.getElementById('progressBarInnerDiv').style.width = '100%';
   document.getElementById('progressBarInnerDiv').style.background = gradientColor;
