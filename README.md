@@ -78,7 +78,7 @@ Not Applicable: This is a static website for educational purposes and therefore 
 
 * version 1.0 - Initialization of Readme, file structure and placeholder HTML file
 * version 1.1 - Updates to file structure, completion of basic game mechanics, some styling, and quasi animations
-
+* version 1.2 - Changes to HTML layout and addition of progress bar.  Additional items for game mechanics fixes
 ## Authors
 
 * **Geoff Goodwin** - *Initial work* - [Geoff-Goodwin-Dev](https://github.com/Geoff-Goodwin-Dev)

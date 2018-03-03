@@ -26,33 +26,46 @@
 
   <div id="mainPageBodyContainer">
 
-    <div id="gameTitleBar" class="centeredBodyContent insetShaddow">
+    <div id="gameTitleBar" class="centeredBodyContent insetShadow">
       <h1 >Hangman Game</h1>
     </div>
 
-    <div id="wordDisplaySection" class="centeredBodyContent insetShaddow">
-      <div id="wordContainer">
-        <h1 id="wordDisplay">Press the Start button to begin</h1>
-        <button id="start" onclick=newRound()>Start</button>
-      </div>
-    </div>
+    <!--<div id="wordDisplaySection" class="centeredBodyContent insetShadow">-->
+      <!--<div id="wordContainer">-->
+        <!--<h1 id="wordDisplay">Press the Start button to begin</h1>-->
+        <!--<button id="start" onclick=newRound()>Start</button>-->
+      <!--</div>-->
+    <!--</div>-->
 
-    <div id="hangmanDisplay" class="centeredBodyContent insetShaddow">
+    <div id="hangmanDisplay" class="centeredBodyContent insetShadow">
       <img src="assets/images/manLayer_8.png" id="hangmanImg">
+
+      <div id="statsContainer">
+        <h1 id="wordDisplay">Press the Start button to begin</h1>
+
+        <br>
+        <br>
+        <p>Bad Letter Guesses:</p>
+        <p id="badLetterGuesses"></p>
+        <p>Good Letter Guesses:</p>
+        <p id="goodLetterGuesses"></p>
+        <br>
+        <p>Wins: <span id="wins">0</span> Losses: <span id="losses">0</span></p>
+        <p></p>
+        <br>
+        <div id="progressBarOuterDiv">
+          <div id="progressBarInnerDiv"></div>
+        </div>
+        <p>Guesses Remaining: <span id="guessDownCounter">8</span></p>
+
+      </div>
+
+      <button id="start" onclick=newRound()>Start</button>
+
     </div>
-
-    <div id="gameBody" class="centeredBodyContent insetShaddow">
-      <p>Wins: <span id="wins"></span></p>
-      <p>Losses: <span id="losses"></span></p>
-      <p>Guesses Left: <span id="guessDownCounter"></span></p>
-
-      <!--<button id="reset" disabled onclick=reset()>Reset</button>-->
-    </div>
-
-
 
     <!--VIRTUAL KEYBOARD FOR RESPONSIVE ON PHONE OR TABLET-->
-    <div id="keyboardContainer" class="centeredBodyContent insetShaddow">
+    <div id="keyboardContainer" class="centeredBodyContent insetShadow">
 
       <div id="keyboardTopRow" class="keyboardRow">
         <div id="keyQ" class="keyboardButton" onclick=letterGuess("Q")>Q</div>
@@ -89,13 +102,6 @@
         <div id="keyM" class="keyboardButton" onclick=letterGuess("M")>M</div>
       </div>
 
-    </div>
-
-    <div id="workingSection" class="centeredBodyContent insetShaddow">
-      <p><u>Bad Letter Guesses:</u></p>
-      <p id="badLetterGuesses"></p>
-      <p><u>Good Letter Guesses:</u></p>
-      <p id="goodLetterGuesses"></p>
     </div>
 
   </div>

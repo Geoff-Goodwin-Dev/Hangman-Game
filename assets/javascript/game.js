@@ -12,18 +12,24 @@ var key = "";
 var wins = 0;
 var losses = 0;
 var guessDownCounter = 8;
+var lifeCounterMax = 8;
+var gradientColor = "linear-gradient(#40b529, #367a29)";
+var percentLifeRemaining = 100;
 
 
 
 function newRound() {
   gameInProgress = true;
-  console.log('game status', gameInProgress);
+  document.getElementById('start').style.visibility = 'hidden';
   badGuessArray = [];
   goodGuessArray = [];
   wordLettersArray = [];
   underscoredWord = [];
   guessDownCounter = 8;
   updateImage();
+  gradientColor = "linear-gradient(#40b529, #367a29)";
+  document.getElementById('progressBarInnerDiv').style.width = '100%';
+  document.getElementById('progressBarInnerDiv').style.background = gradientColor;
   var buttonsSet = document.getElementsByClassName('keyboardButton');
   for (i = 0; i < buttonsSet.length; i++) {
     buttonsSet[i].style.backgroundImage = "url('assets/images/typewriterbutton.png')";
@@ -63,9 +69,10 @@ function letterGuess(letter) {
         badGuessArray.push(letter);
         document.getElementById('badLetterGuesses').innerText = badGuessArray.join(', ');
         guessDownCounter--;
+        reduceRemaining();
         document.getElementById("guessDownCounter").innerText = guessDownCounter;
         updateImage();
-        // console.log('guess down counter:', guessDownCounter);
+
         if (guessDownCounter === 0) {
           lossCountIncrease();
         }
@@ -115,6 +122,33 @@ function selectedWordToUnderscores() {
   }
   console.log(underscoredWord);
   updateWordDisplay();
+}
+
+function reduceRemaining() {
+  var percentLifeRemaining = ((100 * guessDownCounter) / lifeCounterMax);
+  var progressBar = document.getElementById('progressBarInnerDiv');
+  progressBar.style.width = percentLifeRemaining + '%';
+  switch (true) {
+    case (percentLifeRemaining > 0) && (percentLifeRemaining <= 15):
+      gradientColor = "linear-gradient(#990000, #660000)";
+      break;
+    case (percentLifeRemaining > 15) && (percentLifeRemaining <= 30):
+      gradientColor = "linear-gradient(#cc0000, #990000)";
+      break;
+    case (percentLifeRemaining > 30) && (percentLifeRemaining <= 40):
+      gradientColor = "linear-gradient(#ff9900, #cc6600)";
+      break;
+    case (percentLifeRemaining > 40) && (percentLifeRemaining <= 50):
+      gradientColor = "linear-gradient(#ffff00, #ffcc00)";
+      break;
+    case (percentLifeRemaining > 50) && (percentLifeRemaining <= 100):
+      gradientColor = "linear-gradient(#40b529, #367a29)";
+      break;
+    default:
+      console.log('unexpected value');
+  }
+  progressBar.style.background = gradientColor;
+
 }
 
 function replaceUnderscoreWithLetter(letter) {
