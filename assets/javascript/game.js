@@ -31,7 +31,7 @@ function newRound() {
   document.getElementById('progressBarInnerDiv').style.width = '100%';
   document.getElementById('progressBarInnerDiv').style.background = gradientColor;
   var buttonsSet = document.getElementsByClassName('keyboardButton');
-  for (i = 0; i < buttonsSet.length; i++) {
+  for (var i = 0; i < buttonsSet.length; i++) {
     buttonsSet[i].style.backgroundImage = "url('assets/images/typewriterbutton.png')";
     buttonsSet[i].style.color = '#4f3b1e';
   }
@@ -108,7 +108,7 @@ function randomWordSelect() {
 }
 
 function wordToArray() {
-  for (i = 0; i < selectedWord.length; i++) {
+  for (var i = 0; i < selectedWord.length; i++) {
     wordLettersArray.push(selectedWord.charAt(i));
   }
   console.log(wordLettersArray);
@@ -116,7 +116,7 @@ function wordToArray() {
 }
 
 function selectedWordToUnderscores() {
-  for (i = 0; i < wordLettersArray.length; i++) {
+  for (var i = 0; i < wordLettersArray.length; i++) {
     underscoredWord.push("_");
 
   }
@@ -152,7 +152,7 @@ function reduceRemaining() {
 }
 
 function replaceUnderscoreWithLetter(letter) {
-  for (i = 0; i < wordLettersArray.length; i++) {
+  for (var i = 0; i < wordLettersArray.length; i++) {
     if (letter === wordLettersArray[i]) {
       underscoredWord[i] = letter;
       console.log(underscoredWord);
@@ -176,7 +176,6 @@ function selectedLetterInWord() {
 
 function winCountIncrease() {
   wins++;
-  // console.log("win increased to", wins);
   newRound();
 }
 

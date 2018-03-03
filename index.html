@@ -30,37 +30,34 @@
       <h1 >Hangman Game</h1>
     </div>
 
-    <!--<div id="wordDisplaySection" class="centeredBodyContent insetShadow">-->
-      <!--<div id="wordContainer">-->
-        <!--<h1 id="wordDisplay">Press the Start button to begin</h1>-->
-        <!--<button id="start" onclick=newRound()>Start</button>-->
-      <!--</div>-->
-    <!--</div>-->
-
     <div id="hangmanDisplay" class="centeredBodyContent insetShadow">
-      <img src="assets/images/manLayer_8.png" id="hangmanImg">
-
-      <div id="statsContainer">
-        <h1 id="wordDisplay">Press the Start button to begin</h1>
-
-        <br>
-        <br>
-        <p>Bad Letter Guesses:</p>
-        <p id="badLetterGuesses"></p>
-        <p>Good Letter Guesses:</p>
-        <p id="goodLetterGuesses"></p>
-        <br>
-        <p>Wins: <span id="wins">0</span> Losses: <span id="losses">0</span></p>
-        <p></p>
-        <br>
-        <div id="progressBarOuterDiv">
-          <div id="progressBarInnerDiv"></div>
-        </div>
-        <p>Guesses Remaining: <span id="guessDownCounter">8</span></p>
-
+      <div class="sideBySide">
+        <img src="assets/images/manLayer_8.png" id="hangmanImg">
       </div>
 
-      <button id="start" onclick=newRound()>Start</button>
+      <div class="sideBySide">
+        <div id="statsContainer">
+          <h1 id="wordDisplay">Press the Start button to begin</h1>
+
+          <br>
+          <br>
+          <p>Bad Letter Guesses:</p>
+          <p id="badLetterGuesses"></p>
+          <p>Good Letter Guesses:</p>
+          <p id="goodLetterGuesses"></p>
+          <br>
+          <p>Wins: <span id="wins">0</span> Losses: <span id="losses">0</span></p>
+          <p></p>
+          <br>
+          <div id="progressBarOuterDiv">
+            <div id="progressBarInnerDiv"></div>
+          </div>
+          <p>Guesses Remaining: <span id="guessDownCounter">8</span></p>
+
+        </div>
+
+        <button id="start" onclick=newRound()>Start</button>
+      </div>
 
     </div>
 
