@@ -82,6 +82,7 @@ Not Applicable: This is a static website for educational purposes and therefore 
 * version 1.3 - Additional tweaks to page layout to fix responsive scaling issues 
 * version 1.4 - more tweaks to page layout to fix responsive
 * version 1.5 - bug fix on clearing good/bad guess arrays display
+* version 1.6 - refactoring functions in JavaScript and re-arrangement of displayed game elements
 
 ## Authors
 

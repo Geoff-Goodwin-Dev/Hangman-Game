@@ -37,17 +37,12 @@
 
       <div class="sideBySide">
         <div id="statsContainer">
-          <h1 id="wordDisplay">Press the Start button to begin</h1>
-
+          <h1 id="wordDisplay">Press start to begin!</h1>
+          <hr>
           <br>
+          <p>Wins: <span id="wins">0</span></p>
           <br>
-          <p>Bad Letter Guesses:</p>
-          <p id="badLetterGuesses"></p>
-          <p>Good Letter Guesses:</p>
-          <p id="goodLetterGuesses"></p>
-          <br>
-          <p>Wins: <span id="wins">0</span> Losses: <span id="losses">0</span></p>
-          <p></p>
+          <p>Losses: <span id="losses">0</span></p>
           <br>
           <div id="progressBarOuterDiv">
             <div id="progressBarInnerDiv"></div>
@@ -56,7 +51,7 @@
 
         </div>
 
-        <button id="start" onclick=newRound()>Start</button>
+        <button id="start" onclick=newGame()>Start</button>
       </div>
 
     </div>
@@ -99,6 +94,10 @@
         <div id="keyM" class="keyboardButton" onclick=letterGuess("M")>M</div>
       </div>
 
+      <div id="guessArraysDisplay">
+        <p>Bad Letter Guesses: <span id="badLetterGuesses"></span></p>
+        <p>Good Letter Guesses: <span id="goodLetterGuesses"></span></p>
+      </div>
     </div>
 
   </div>
